@@ -1,0 +1,35 @@
+.header {
+  max-width: 1920px;
+  height: 80px;
+  font-family: "MadHacker";
+}
+.navigation {
+  max-width: 1100px;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo {
+  color: white;
+  font-size: 36px;
+  text-decoration: none;
+}
+.navItem {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+.main {
+  margin: 0 5px;
+}
+.main:after {
+  content: "]";
+  color: red;
+  margin-left: 5px;
+}
+.main::before {
+  content: "[";
+  color: red;
+  margin-right: 5px;
+}
