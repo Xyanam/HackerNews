@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import AllNews from "./components/Header/AllNews/AllNews";
 import Header from "./components/Header/Header";
+import AllNews from "./pages/NewsPage/NewsPage";
 
 function App() {
   return (

@@ -2,6 +2,10 @@
   font-family: "MadHacker";
   src: local("MadHacker"), url(fonts/MadHacker-Yjz8.ttf) format("truetype");
 }
+@font-face {
+  font-family: "Inconsolata";
+  src: local("Inconsolata"), url(fonts/Inconsolata.ttf) format("truetype");
+}
 
 body {
   margin: 0;
