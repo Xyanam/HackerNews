@@ -1,3 +1,6 @@
+.link {
+  text-decoration: none;
+}
 .block {
   max-width: 1200px;
   width: 100%;
@@ -10,6 +13,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  transition: 0.3s;
+}
+.block:hover {
+  box-shadow: 2px 5px 10px 6px rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
 }
 .titleBlock {
   padding: 0px 10px;

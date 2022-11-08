@@ -1,0 +1,48 @@
+.block {
+  max-width: 750px;
+  width: 100%;
+  margin: 30px auto;
+  position: relative;
+}
+.head {
+  max-width: 750px;
+  border-bottom: 2px solid #5a5a5a;
+}
+.title {
+  color: #bcbcbc;
+  font-size: 32px;
+  font-family: "Inconsolata";
+  margin: 10px 35px;
+}
+.body {
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+.text {
+  font-size: 32px;
+  font-family: "Inconsolata";
+  color: #bcbcbc;
+  margin: 10px 0;
+}
+
+.child {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 100px;
+}
+.headChild {
+  max-width: 650px;
+  border-bottom: 2px solid #5a5a5a;
+}
+.bodyChild {
+  max-width: 620px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.arrow {
+  position: absolute;
+  left: 5%;
+  cursor: pointer;
+}

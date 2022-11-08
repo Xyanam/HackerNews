@@ -1,0 +1,20 @@
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn {
+  background-color: #1b1b1b;
+  border-radius: 15px;
+  color: white;
+  font-family: "MadHacker";
+  font-size: 24px;
+  cursor: pointer;
+  margin: 20px auto;
+  width: 320px;
+  height: 40px;
+  border: none;
+}

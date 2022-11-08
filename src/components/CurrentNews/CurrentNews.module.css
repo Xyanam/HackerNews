@@ -1,0 +1,69 @@
+.block {
+  max-width: 1050px;
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+  background-color: rgba(27, 27, 27, 0.85);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.title {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h1 {
+  color: white;
+  font-family: "MadHacker";
+  font-weight: 300;
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.title h1:after {
+  content: "]";
+  color: white;
+  margin-left: 5px;
+}
+.title h1::before {
+  content: "[";
+  color: white;
+  margin-right: 5px;
+}
+.btn {
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn a {
+  font-size: 20px;
+  font-family: "Inconsolata";
+  text-decoration: none;
+  color: black;
+}
+
+.info {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoItem {
+  color: white;
+  font-family: "Inconsolata";
+  font-size: 24px;
+}

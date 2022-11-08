@@ -15,9 +15,12 @@ const AllNews: React.FC = () => {
 
   useEffect(() => {
     dispatch(fetchNews());
-    setInterval(() => {
+    const interval = setInterval(() => {
       dispatch(fetchNews());
     }, 60000);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (
@@ -29,6 +32,10 @@ const AllNews: React.FC = () => {
       </div>
       {loading ? (
         <Loader />
+      ) : sortNewsByTime[0] === null ? (
+        <h1 style={{ color: "white", fontFamily: "MadHacker" }}>
+          PRESS ON REFRESH
+        </h1>
       ) : (
         sortNewsByTime.map((news) => <News key={news.id} news={news} />)
       )}

@@ -1,5 +1,5 @@
 import { getNewsById, getNewsId } from "./../../functions/api";
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export interface INews {
   title: string;
@@ -52,6 +52,18 @@ export const fetchNews = createAsyncThunk(
   }
 );
 
+export const fetchNewsById = createAsyncThunk(
+  "news/fetchNewsById",
+  async function (id: number, { rejectWithValue }) {
+    try {
+      const response = await getNewsById(id);
+      return response;
+    } catch (error) {
+      return rejectWithValue(`${error}`);
+    }
+  }
+);
+
 const newsSlice = createSlice({
   name: "news",
   initialState,
@@ -67,6 +79,19 @@ const newsSlice = createSlice({
         state.allNews = action.payload;
       })
       .addCase(fetchNews.rejected, (state) => {
+        state.loading = false;
+        state.error = "Server error!";
+      })
+      .addCase(fetchNewsById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchNewsById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.newsId.push(action.payload.id);
+        state.news = action.payload;
+      })
+      .addCase(fetchNewsById.rejected, (state) => {
         state.loading = false;
         state.error = "Server error!";
       });
