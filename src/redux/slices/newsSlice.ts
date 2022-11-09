@@ -1,7 +1,8 @@
-import { getNewsById, getNewsId } from "./../../functions/api";
+import { getNewsById, getNewsId } from "../../functions/getApi";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export interface INews {
+  deleted: boolean;
   title: string;
   id: number;
   time: string;

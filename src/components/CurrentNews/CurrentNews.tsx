@@ -6,10 +6,9 @@ import ArrowBack from "../ArrowBack/ArrowBack";
 
 type TCurrentNewsProps = {
   news: INews;
-  newsId: number[];
 };
 
-const CurrentNews: React.FC<TCurrentNewsProps> = ({ news, newsId }) => {
+const CurrentNews: React.FC<TCurrentNewsProps> = ({ news }) => {
   return (
     <div className={classes.block}>
       <ArrowBack />
