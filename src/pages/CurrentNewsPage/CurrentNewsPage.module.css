@@ -18,3 +18,10 @@
   height: 40px;
   border: none;
 }
+
+@media (max-width: 425px) {
+  .btn {
+    width: 200px;
+    height: 60px;
+  }
+}

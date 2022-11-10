@@ -6,10 +6,9 @@
 .btnBlock {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .btn {
-  width: 150px;
+  width: 180px;
   height: 40px;
   font-size: 24px;
   font-family: "MadHacker";

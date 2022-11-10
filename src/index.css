@@ -10,6 +10,8 @@
 body {
   margin: 0;
   background-image: url("/src/assets/img/background.png");
-  background-size: cover;
   background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(22, 20, 20);
 }

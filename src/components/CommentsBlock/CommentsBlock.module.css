@@ -3,6 +3,7 @@
   width: 100%;
   margin: 0 auto;
   background-color: #1b1b1b;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -11,7 +12,7 @@
     padding: 0 15px;
   }
 }
-@media (max-width: 330px) {
+@media (max-width: 380px) {
   .container {
     max-width: 340px;
   }
