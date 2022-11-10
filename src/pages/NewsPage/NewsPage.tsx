@@ -9,9 +9,9 @@ const AllNews: React.FC = () => {
   const dispatch = useAppDispatch();
   const { allNews, loading } = useAppSelector((state) => state.news);
 
-  const sortNewsByTime = [...allNews].sort(
-    (a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()
-  );
+  const sortNewsByTime = [...allNews]
+    .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime())
+    .filter((news) => news);
 
   useEffect(() => {
     dispatch(fetchNews());
@@ -32,10 +32,6 @@ const AllNews: React.FC = () => {
       </div>
       {loading ? (
         <Loader />
-      ) : sortNewsByTime[0] === null ? (
-        <h1 style={{ color: "white", fontFamily: "MadHacker" }}>
-          PRESS ON REFRESH
-        </h1>
       ) : (
         sortNewsByTime.map((news) => <News key={news.id} news={news} />)
       )}

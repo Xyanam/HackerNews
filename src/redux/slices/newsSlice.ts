@@ -33,7 +33,7 @@ const initialState: INewsState = {
   error: null,
 };
 
-export const fetchNews = createAsyncThunk(
+export const fetchNews = createAsyncThunk<INews[], undefined>(
   "news/fetchNews",
   async function (_: undefined, { rejectWithValue }) {
     try {
@@ -46,14 +46,15 @@ export const fetchNews = createAsyncThunk(
           return response;
         })
       );
-      return news;
+      let filteredNews = news.filter((news) => news !== null);
+      return filteredNews;
     } catch (error) {
       return rejectWithValue(`${error}`);
     }
   }
 );
 
-export const fetchNewsById = createAsyncThunk(
+export const fetchNewsById = createAsyncThunk<INews, number>(
   "news/fetchNewsById",
   async function (id: number, { rejectWithValue }) {
     try {
@@ -70,32 +71,31 @@ const newsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(fetchNews.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchNews.fulfilled, (state, action) => {
-        state.loading = false;
-        state.allNews = action.payload;
-      })
-      .addCase(fetchNews.rejected, (state) => {
-        state.loading = false;
-        state.error = "Server error!";
-      })
-      .addCase(fetchNewsById.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchNewsById.fulfilled, (state, action) => {
-        state.loading = false;
-        state.newsId.push(action.payload.id);
-        state.news = action.payload;
-      })
-      .addCase(fetchNewsById.rejected, (state) => {
-        state.loading = false;
-        state.error = "Server error!";
-      });
+    builder.addCase(fetchNews.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchNews.fulfilled, (state, action) => {
+      state.loading = false;
+      state.allNews = action.payload;
+    });
+    builder.addCase(fetchNews.rejected, (state) => {
+      state.loading = false;
+      state.error = "Server error!";
+    });
+    builder.addCase(fetchNewsById.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(fetchNewsById.fulfilled, (state, action) => {
+      state.loading = false;
+      state.newsId.push(action.payload.id);
+      state.news = action.payload;
+    });
+    builder.addCase(fetchNewsById.rejected, (state) => {
+      state.loading = false;
+      state.error = "Server error!";
+    });
   },
 });
 

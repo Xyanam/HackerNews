@@ -33,3 +33,9 @@
   color: red;
   margin-right: 5px;
 }
+
+@media (max-width: 460px) {
+  .navigation {
+    flex-direction: column;
+  }
+}

@@ -4,3 +4,15 @@
   margin: 0 auto;
   background-color: #1b1b1b;
 }
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 550px;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 330px) {
+  .container {
+    max-width: 340px;
+  }
+}

@@ -26,7 +26,11 @@
   color: #bcbcbc;
   margin: 10px 0;
 }
-
+.text a {
+  color: white;
+  width: 100px;
+  word-wrap: break-word;
+}
 .child {
   max-width: 650px;
   width: 100%;
@@ -59,4 +63,29 @@
   transition: 0.3s;
   width: 30px;
   height: 30px;
+}
+
+@media (max-width: 768px) {
+  .child {
+    max-width: 450px;
+  }
+  .text {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .child {
+    max-width: 320px;
+  }
+  .arrowActive {
+    top: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .child {
+    margin: 30px 20px;
+    max-width: 310px;
+  }
 }

@@ -14,7 +14,7 @@ const initialState: ICommentsState = {
   error: null,
 };
 
-export const getComments = createAsyncThunk(
+export const getComments = createAsyncThunk<INews[], number>(
   "comments/getComments",
   async function (id: number, { rejectWithValue }) {
     try {
@@ -40,19 +40,18 @@ const commentsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder
-      .addCase(getComments.pending, (state) => {
-        state.loadingCom = true;
-        state.error = null;
-      })
-      .addCase(getComments.fulfilled, (state, action) => {
-        state.loadingCom = false;
-        state.comments = action.payload;
-      })
-      .addCase(getComments.rejected, (state) => {
-        state.loadingCom = false;
-        state.error = "Server error!";
-      });
+    builder.addCase(getComments.pending, (state) => {
+      state.loadingCom = true;
+      state.error = null;
+    });
+    builder.addCase(getComments.fulfilled, (state, action) => {
+      state.loadingCom = false;
+      state.comments = action.payload;
+    });
+    builder.addCase(getComments.rejected, (state) => {
+      state.loadingCom = false;
+      state.error = "Server error!";
+    });
   },
 });
 

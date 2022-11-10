@@ -13,7 +13,7 @@ const CurrentNews: React.FC<TCurrentNewsProps> = ({ news }) => {
     <div className={classes.block}>
       <ArrowBack />
       <div className={classes.title}>
-        <h1>{news.title?.toUpperCase()}</h1>
+        <h1>{news.title}</h1>
       </div>
       <div className={classes.btn}>
         <a href={news.url} target="_blank">
