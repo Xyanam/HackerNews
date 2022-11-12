@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import classes from "./Comments.module.css";
 import arrowComment from "../../../assets/img/arrowComment.svg";
-import { INews } from "../../../redux/slices/newsSlice";
 import parse from "html-react-parser";
 import { getNewsById } from "../../../functions/getApi";
+import { INews } from "../../../types/INews";
 
 type CommentsProps = {
   comment: INews;

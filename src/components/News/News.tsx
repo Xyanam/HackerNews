@@ -1,7 +1,7 @@
 import moment from "moment";
 import React from "react";
 import { Link } from "react-router-dom";
-import { INews } from "../../redux/slices/newsSlice";
+import { INews } from "../../types/INews";
 import classes from "./News.module.css";
 
 type TNewsProps = {

@@ -1,12 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getNewsById } from "../../functions/getApi";
-import { INews } from "./newsSlice";
-
-interface ICommentsState {
-  comments: INews[];
-  loadingCom: boolean;
-  error: string | null;
-}
+import { ICommentsState } from "../../types/ICommentsState";
+import { INews } from "../../types/INews";
 
 const initialState: ICommentsState = {
   comments: [],

@@ -1,29 +1,7 @@
 import { getNewsById, getNewsId } from "../../functions/getApi";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
-export interface INews {
-  deleted: boolean;
-  title: string;
-  id: number;
-  time: string;
-  by: string;
-  rating: number;
-  descendants: number;
-  kids: number[];
-  score: number;
-  type: string;
-  url: string;
-  text: string;
-  parent: number;
-}
-
-interface INewsState {
-  newsId: number[];
-  allNews: INews[];
-  news: INews;
-  loading: boolean;
-  error: string | null;
-}
+import { INews } from "../../types/INews";
+import { INewsState } from "../../types/INewsState";
 
 const initialState: INewsState = {
   newsId: [],

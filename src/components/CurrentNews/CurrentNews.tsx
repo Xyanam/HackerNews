@@ -1,8 +1,8 @@
 import React from "react";
 import moment from "moment";
 import classes from "./CurrentNews.module.css";
-import { INews } from "../../redux/slices/newsSlice";
 import ArrowBack from "../ArrowBack/ArrowBack";
+import { INews } from "../../types/INews";
 
 type TCurrentNewsProps = {
   news: INews;
@@ -16,7 +16,7 @@ const CurrentNews: React.FC<TCurrentNewsProps> = ({ news }) => {
         <h1>{news.title}</h1>
       </div>
       <div className={classes.btn}>
-        <a href={news.url} target="_blank">
+        <a href={news.url} target="_blank" rel="noreferrer">
           LINK TO THE NEWS
         </a>
       </div>

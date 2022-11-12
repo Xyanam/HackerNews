@@ -1,5 +1,5 @@
 import React from "react";
-import { INews } from "../../redux/slices/newsSlice";
+import { INews } from "../../types/INews";
 import Comments from "./Comments/Comments";
 import classes from "./CommentsBlock.module.css";
 
