@@ -27,4 +27,4 @@ $ yarn start
 - Список комментариев на странице новости также можно обновить вручную с помощью кнопки "Обновить".
 
 # Демо приложения
-hackernewstask.vercel.app
+https://hackernewstask.vercel.app/
